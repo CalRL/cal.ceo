@@ -5,7 +5,7 @@ import { HeyImCal } from './components/HeyImCal';
 function App() {
   return (
     <div className="App">
-      <HeyImCal name="Cal"/> 
+      <HeyImCal name="Cal"/>
         <header className="App-header">  
       </header>
     </div>
