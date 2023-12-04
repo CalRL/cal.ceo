@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import "../App.css";
 import {
     Text,
@@ -14,10 +14,10 @@ import githubLogo from "../images/github.png";
 interface HeyImCalProps {
     name: string;
 }
-/*
+/**
   * This function creates the invisible box element that contains the "Hey, I'm Cal" text,
   * the two badges underneath, and the icons under the badges.
-  @param name /The name of the user (in this case, cal.)
+  @param { name } /The name of the user (in this case, cal.)
   */
 export const HeyImCal: React.FC<HeyImCalProps> = ({ name }) => {
     return (

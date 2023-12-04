@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../App.css";
-import { Text, Box, Image, Center } from "@chakra-ui/react";
+import { Text, Box, Image, Center, color } from "@chakra-ui/react";
 const url = "https://api.lanyard.rest/v1/users/242276511028084738";
 let avatar =
     "https://cdn.discordapp.com/avatars/242276511028084738/66b26bbc03c85fa6659b6ae21c8ff485.png?size=4096";
@@ -42,11 +42,12 @@ export const DiscordInfo: React.FC = () => {
                     borderWidth="3px"
                     borderColor="Grey"
                 ></Image>
-                <Box marginLeft={5}>
+                <Box marginLeft={5}
+                fontSize={16}>
                     <Text display="flex">
-                        <Text marginRight={1}>Cal</Text>
                         <Text>He/Him</Text>
                     </Text>
+                    <Text>Tag: caldev</Text>
                     <Text>Status: {status}</Text>
                 </Box>
             </Box>
