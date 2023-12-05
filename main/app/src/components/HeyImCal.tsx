@@ -51,13 +51,19 @@ export const HeyImCal: React.FC<HeyImCalProps> = ({ name }) => {
                         </Badge>
                     </Flex>
                 </HStack>
-                <IconButton
-                    className="socialBadges"
-                    aria-label="Search database"
-                    backgroundColor={"transparent"}
-                    _hover={{ backgroundColor: "transparent" }}
-                    icon={<Image src={githubLogo} height={8} width={8} />}
-                ></IconButton>
+                <a
+                    href="https://github.com/calrl"
+                    target="_blank"
+                    rel="noreferrer"
+                >
+                    <IconButton
+                        className="socialBadges"
+                        aria-label="Search database"
+                        backgroundColor={"transparent"}
+                        _hover={{ backgroundColor: "transparent" }}
+                        icon={<Image src={githubLogo} height={8} width={8} />}
+                    ></IconButton>
+                </a>
             </Box>
         </div>
     );
