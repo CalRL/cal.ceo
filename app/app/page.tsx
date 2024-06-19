@@ -4,6 +4,7 @@ import SocialMedia from "@/components/SocialMedia";
 import DiscordComponent from "@/components/Discord";
 import AboutComponent from "@/components/AboutComponent";
 import TypeGen from "@/components/TypeGen";
+import ModeSwtich from "@/components/ModeSwitch";
 
 export default function Home() {
   return (
@@ -14,13 +15,13 @@ export default function Home() {
       </div>
 
       <div className="mt-4">
-        <SocialMedia />
-      </div>
-      <div className="mt-4">
         <DiscordComponent />
       </div>
       <div className="md:w-[30%] w-[70%] mt-4">
         <AboutComponent />
+      </div>
+      <div className="bottom-10 absolute flex space-x-4">
+        <SocialMedia />
       </div>
     </main>
   );

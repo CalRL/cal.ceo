@@ -1,6 +1,7 @@
 import * as React from "react";
 import { DiGithubBadge } from "react-icons/di";
 import { FaLinkedin } from "react-icons/fa";
+import ModeSwtich from "./ModeSwitch";
 
 const SocialMedia: React.FC = () => {
   return (

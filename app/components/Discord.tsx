@@ -1,6 +1,7 @@
 import * as React from "react";
 import { useEffect } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import TypeGen from "./TypeGen";
 
 const url = "https://api.lanyard.rest/v1/users/242276511028084738";
 
@@ -69,19 +70,13 @@ export const StatusCircle: React.FC = () => {
 const DiscordComponent: React.FC = () => {
   return (
     <div className="flex space-x-2 w-full">
-      <div className="grid grid-cols-3 ">
-        <div className=" items-center flex justify-center w-[60%]">
-          <Avatar className="flex-shrink-0">
-            <AvatarImage src="https://cdn.discordapp.com/avatars/242276511028084738/66b26bbc03c85fa6659b6ae21c8ff485.png?size=4096" />
-            <AvatarFallback>Cal</AvatarFallback>
-          </Avatar>
-        </div>
-
-        <div className=" items-center flex justify-center w-[60%]">
-          <StatusCircle />
-        </div>
-        <div className=" flex items-center justify-center ml-[-80%]">
-          <GetStatus />
+      <div className="">
+        <div className=" flex items-center justify-center">
+          I am currently
+          <div className="pl-1">
+            <GetStatus />
+          </div>
+          !
         </div>
       </div>
     </div>
