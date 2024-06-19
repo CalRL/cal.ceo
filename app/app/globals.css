@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* Ensure that the dark mode is smoothly applied to the whole page */
+body {
+  @apply bg-white dark:bg-black text-black dark:text-white;
+}
