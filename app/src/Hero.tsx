@@ -34,6 +34,8 @@ export function HeroText() {
 
         const direction = dx >= 0 ? 1 : -1;
 
+
+
         wrap.querySelectorAll(".stretch-title").forEach((title) => {
             const layerStrength = Number(
                 (title as HTMLElement).dataset.strength ?? 1
@@ -47,14 +49,22 @@ export function HeroText() {
                 const distance = Math.abs(e.clientX - charX);
                 const falloff = gsap.utils.clamp(0, 1, 1 - distance / 160);
 
+                const distanceY = Math.abs(e.clientY - (rect.top + rect.height / 2));
+                const distance2D = Math.sqrt(distance * distance + distanceY * distanceY);
+
+                const warpFalloff = gsap.utils.clamp(0, 1, 1 - distance2D / 220);
+                const warp = warpFalloff * warpFalloff; // smoother gradient
+
                 const amount = stretch * falloff * layerStrength;
+                const zoom = 1 + warp * 0.12;
 
                 gsap.to(el, {
-                    scaleX: 1 + amount * 0.45,
-                    scaleY: 1 - amount * 0.08,
+                    scaleX: (1 + amount * 0.45) * zoom,
+                    scaleY: (1 - amount * 0.08) * zoom,
                     skewX: direction * amount * 10,
                     x: direction * amount * 6,
-                    transformOrigin: direction > 0 ? "left center" : "right center",
+                    y: -warp * 2,
+                    transformOrigin: "center center",
                     duration: 0.55,
                     ease: "elastic.out(1, 0.32)",
                 });
@@ -84,7 +94,10 @@ export function HeroText() {
         >
             <HeroTextLayer text={TEXT} className="text-blue" strength={2.3} />
             <HeroTextLayer text={TEXT} className="text-green" strength={1.5} />
-            <HeroTextLayer text={TEXT} className="text-main" strength={1} />
+            <div className="magnifier">
+                <HeroTextLayer text={TEXT} className="text-main magnifier-text" strength={1} />
+            </div>
+
         </div>
     );
 }
