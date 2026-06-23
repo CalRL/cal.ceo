@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+.hero-text-wrap {
+    position: relative;
+    display: inline-block;
+    cursor: default;
+}
+
+.stretch-title {
+    display: flex;
+    justify-content: center;
+    font-size: clamp(4rem, 13vw, 14rem);
+    font-weight: 900;
+    line-height: 0.85;
+    letter-spacing: -0.08em;
+    margin: 0;
+}
+
+.char {
+    display: inline-block;
+    will-change: transform;
+}
+
+.text-main {
+    position: relative;
+    z-index: 3;
+    color: #212020;
+}
+
+.text-green,
+.text-blue {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    mix-blend-mode: screen;
+}
+
+.text-green {
+    z-index: 2;
+    color: #1c7100;
+}
+
+.text-blue {
+    z-index: 1;
+    color: #004d83;
+}
